@@ -3,10 +3,23 @@
 
 ### Project Title: India's_General_Election_Result_Analysis_2024
 ### Level: Advanced
+### Database:[constituencywise_details.csv][constituencywise_results.csv][partywise_results.csv][states.csv][statewise_results.csv]
+**This Project is designed to demonstrate SQL skills and techniques typically used to data analysts to explore, clean, and analyze 2024 election result data. The project involves setting up a general election database and performing exploratory data analysis (EDA), and answering business questions through SQL quaries. This project is ideal for those who are starting thier journey in data analysis and to build a solid foundation in SQL.
 
+## Objectives
+**1. Set up a Election Analysis Database: Create an election analysis database with the provided election data.
+**2. Data Cleaning: Identify and remove any records with distorted values.
+**3. Exploratory Data Analysis(EDA): Perform basic explaratory data analysis to understand the dataset.
+**4. Business Analysis: Use SQL to answer specific business questions and derive insights from the election data.
+
+## Project Structure
+###1. Database Setup
+       Database Creation:The project
+       Table Creation: 
 
 
 1. **Total Seats
+   
    ''' sql
 	SELECT 
 	DISTINCT COUNT (Parliament_Constituency) AS Total_Seats
@@ -14,6 +27,7 @@
  
 '''
 2. **What is the total number of seats available for elections in each state
+
    ''' sql
 SELECT 
     s.State AS State_Name,
@@ -31,6 +45,7 @@ ORDER BY
 '''
     
 3.**Total Seats Won by NDA Allianz
+
 ''' sql
 SELECT 
     SUM(CASE 
@@ -58,6 +73,7 @@ FROM
 '''
 
 4. **Seats Won by NDA Allianz Parties
+   
    ''' sql
 SELECT 
     party as Party_Name,
@@ -85,6 +101,7 @@ ORDER BY Seats_Won DESC
  '''
 
 5. **Total Seats Won by I.N.D.I.A. Allianz
+   
    ''' sql
 SELECT 
     SUM(CASE 
@@ -119,6 +136,7 @@ FROM
 '''
 
 6.** Seats Won by I.N.D.I.A. Allianz Parties
+
    '''sql
 SELECT 
     party as Party_Name,
@@ -153,6 +171,7 @@ ORDER BY Seats_Won DESC
  '''
 
 7. **Add new column field in table partywise_results to get the Party Allianz as NDA, I.N.D.I.A and OTHER
+   
    ''' sql
 ALTER TABLE partywise_results
 ADD party_alliance VARCHAR(50);
@@ -208,6 +227,7 @@ WHERE party_alliance IS NULL;
 
 
 8. **Which party alliance (NDA, I.N.D.I.A, or OTHER) won the most seats across all states?
+   
    ''' sql
 SELECT 
     p.party_alliance,
@@ -226,6 +246,7 @@ ORDER BY
 '''
 
 9.** Winning candidate's name, their party name, total votes, and the margin of victory for a specific state and constituency?
+
 ''' sql
 SELECT cr.Winning_Candidate, p.Party, p.party_alliance, cr.Total_Votes, cr.Margin, cr.Constituency_Name, s.State
 FROM constituencywise_results cr
@@ -236,6 +257,7 @@ WHERE s.State = 'Uttar Pradesh' AND cr.Constituency_Name = 'AMETHI';
  '''
  
 10.**What is the distribution of EVM votes versus postal votes for candidates in a specific constituency?
+
 ''' sql
 SELECT 
     cd.Candidate,
@@ -254,6 +276,7 @@ ORDER BY cd.Total_Votes DESC;
  '''
 
 11. **Which parties won the most seats in s State, and how many seats did each party win?
+    
 ''' sql
 SELECT 
     p.Party,
@@ -273,7 +296,8 @@ ORDER BY
     Seats_Won DESC;
  '''
 
-12.**What is the total number of seats won by each party alliance (NDA, I.N.D.I.A, and OTHER) in each state for the India Elections 2024
+12.**What is the total number of seats won by each party alliance (NDA, I.N.D.I.A, and OTHER) in each state for the India Elections 2024?
+
 ''' sql
 SELECT 
     s.State AS State_Name,
@@ -298,6 +322,7 @@ ORDER BY
  
 
 13.** Which candidate received the highest number of EVM votes in each constituency (Top 10)?
+
 ''' sql
 SELECT TOP 10
     cr.Constituency_Name,
@@ -320,6 +345,7 @@ ORDER BY
  '''
 
 14. **Which candidate won and which candidate was the runner-up in each constituency of State for the 2024 elections?
+    
 '''sql
 WITH RankedCandidates AS (
     SELECT 
@@ -390,6 +416,7 @@ ORDER BY
  
 
 15. **For the state of Maharashtra, what are the total number of seats, total number of candidates, total number of parties, total votes (including EVM and postal), and the breakdown of EVM and postal votes?
+    
     ''' sql
 SELECT 
     COUNT(DISTINCT cr.Constituency_ID) AS Total_Seats,
