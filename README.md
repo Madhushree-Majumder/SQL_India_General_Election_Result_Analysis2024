@@ -1,4 +1,10 @@
-# SQL_India_General_Election_Result_Analysis2024
+# SQL_India_General_Election_Result_Analysis2024_Project
+## Project Overview
+
+### Project Title: India's_General_Election_Result_Analysis_2024
+### Level: Advanced
+
+
 
 1. **Total Seats
    ''' sql
@@ -77,7 +83,8 @@ WHERE
     )
 ORDER BY Seats_Won DESC
  '''
-6. **Total Seats Won by I.N.D.I.A. Allianz
+
+5. **Total Seats Won by I.N.D.I.A. Allianz
    ''' sql
 SELECT 
     SUM(CASE 
@@ -108,7 +115,9 @@ SELECT
         END) AS INDIA_Total_Seats_Won
 FROM 
     partywise_results
+
 '''
+
 6.** Seats Won by I.N.D.I.A. Allianz Parties
    '''sql
 SELECT 
@@ -142,7 +151,8 @@ WHERE
     )
 ORDER BY Seats_Won DESC
  '''
-8. **Add new column field in table partywise_results to get the Party Allianz as NDA, I.N.D.I.A and OTHER
+
+7. **Add new column field in table partywise_results to get the Party Allianz as NDA, I.N.D.I.A and OTHER
    ''' sql
 ALTER TABLE partywise_results
 ADD party_alliance VARCHAR(50);
@@ -195,7 +205,9 @@ UPDATE partywise_results
 SET party_alliance = 'OTHER'
 WHERE party_alliance IS NULL;
 '''
-9. **Which party alliance (NDA, I.N.D.I.A, or OTHER) won the most seats across all states?
+
+
+8. **Which party alliance (NDA, I.N.D.I.A, or OTHER) won the most seats across all states?
    ''' sql
 SELECT 
     p.party_alliance,
@@ -210,7 +222,9 @@ GROUP BY
     p.party_alliance
 ORDER BY 
     Seats_Won DESC;
+
 '''
+
 9.** Winning candidate's name, their party name, total votes, and the margin of victory for a specific state and constituency?
 ''' sql
 SELECT cr.Winning_Candidate, p.Party, p.party_alliance, cr.Total_Votes, cr.Margin, cr.Constituency_Name, s.State
@@ -220,6 +234,7 @@ JOIN statewise_results sr ON cr.Parliament_Constituency = sr.Parliament_Constitu
 JOIN states s ON sr.State_ID = s.State_ID
 WHERE s.State = 'Uttar Pradesh' AND cr.Constituency_Name = 'AMETHI';
  '''
+ 
 10.**What is the distribution of EVM votes versus postal votes for candidates in a specific constituency?
 ''' sql
 SELECT 
