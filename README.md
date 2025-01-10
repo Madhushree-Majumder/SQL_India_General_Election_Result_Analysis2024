@@ -1,0 +1,1 @@
+# SQL_India_General_Election_Result_Analysis2024
