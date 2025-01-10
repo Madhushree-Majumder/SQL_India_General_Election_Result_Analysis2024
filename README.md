@@ -244,7 +244,6 @@ ORDER BY
     Seats_Won DESC;
 
 '''
-
 9.** Winning candidate's name, their party name, total votes, and the margin of victory for a specific state and constituency?
 
 ''' sql
@@ -343,7 +342,6 @@ ORDER BY
     cd.EVM_Votes DESC;
 
  '''
-
 14. **Which candidate won and which candidate was the runner-up in each constituency of State for the 2024 elections?
     
 '''sql
