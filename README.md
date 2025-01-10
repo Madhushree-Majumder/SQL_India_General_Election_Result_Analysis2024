@@ -8,15 +8,15 @@
 
 ## Objectives
 **1. Set up a Election Analysis Database: Create an election analysis database with the provided election data.
-**2. Data Cleaning: Identify and remove any records with distorted values.
-**3. Exploratory Data Analysis(EDA): Perform basic explaratory data analysis to understand the dataset.
-**4. Business Analysis: Use SQL to answer specific business questions and derive insights from the election data.
+**2. Exploratory Data Analysis(EDA): Perform basic explaratory data analysis to understand the dataset.
+**3. Business Analysis: Use SQL to answer specific business questions and derive insights from the election data.
 
 ## Project Structure
 ###1. Database Setup
-       Database Creation:The project
-       Table Creation: 
-
+       Database Creation:The project starts by creating a database named [India_Election_Results]
+       Table Creation: Tables named constituencywise_details, constituencywise_results, partywise_results,statewise_results,states are created to store election result data.
+###2. Data Analysis and Findings
+       The following SQL queries were developed to answer specific business questions:
 
 1. **Total Seats
    
@@ -437,3 +437,8 @@ WHERE
     s.State = 'Maharashtra';
  
 '''
+## Findings
+**
+## Reports
+## Conclusion
+This project serve as a comprehensive introduction to SQL for data analysts, covering database setup, exploratory data analysis and business-driven SQL quaries. The findings from this project can help drive election result decisions by understanding candidate details and party perfomance.
