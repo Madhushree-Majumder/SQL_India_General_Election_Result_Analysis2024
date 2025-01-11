@@ -440,7 +440,7 @@ WHERE
 ## Findings
 543 total seats are there. NDA won 292 seats, BJP won highest seats in NDA Alliance, I.N.D.I.A Alliance won 234 seats, INC (Indian National Congress) won highest seats in I.N.D.I.A Alliance.
 Party, total_votes,margin, state, Constituency Name wise winning candidates name, specific constituencywise distribution of EVM votes versus Postal votes for candidates, statewise seats won by each party, top 10 highest candidates details, constituencywise winning and runner up candidate names.
-**
+
 ## Reports
 A detailed report summarizing total seats in each state, Total number of seats won by each parties, Statewise winning seats for each party, winning candidate's all information, top vote receiving candidate, statewise winner and runner-up information. 
 ## Conclusion
